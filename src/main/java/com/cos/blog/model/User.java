@@ -1,12 +1,22 @@
 package com.cos.blog.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity //User클래스가 MySQL에 테이블이 생성된다. //테이블화시킬땐 엔티티
+@DynamicInsert // insert할때 null인 필드는  (?,?,?) 갯수맞게 제외 시켜주는거
 public class User {
 
     @Id // Primary key
@@ -22,8 +32,9 @@ public class User {
     @Column(nullable = false,length = 50)
     private String email;
 
-    @ColumnDefault("'user'")
-    private String role; // Enum을 쓰는게 좋다. //admin, user, manger 각자 권한 주는애들 주려고 만든거
+//    @ColumnDefault("user")
+    @Enumerated(EnumType.STRING)  //디비는 RoleType이라는게 없으니 해당 이넘이 String이라는걸 알려줘야함
+    private RoleType role; // Enum을 쓰는게 좋다. //admin, user, manger 각자 권한 주는애들 주려고 만든거
 
 
 
