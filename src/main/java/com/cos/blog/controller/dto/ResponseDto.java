@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 @AllArgsConstructor
 @Builder
 public class ResponseDto<T> {
-    HttpStatus satus;
+    int status;
     T data;
+
 }

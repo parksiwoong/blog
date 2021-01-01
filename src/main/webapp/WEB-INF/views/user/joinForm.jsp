@@ -15,9 +15,8 @@
             <label for="email">Email address:</label>
             <input type="email" class="form-control" placeholder="Enter email" id="email">
         </div>
-
-        <button id="btn-save" class="btn btn-primary">회원가입</button>
     </form>
+    <button id="btn-save" class="btn btn-primary">회원가입</button>
 </div>
 
 <script src="/blog/js/user.js"></script><%-- 경로안찾아질때 한번해보기 <script type=text/javascript> --%>
