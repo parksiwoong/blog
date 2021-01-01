@@ -9,6 +9,7 @@
 
 ### 구현중입니다.
 
+### HOME 화면.
 ![화면 캡처 2020-12-16 163543](https://user-images.githubusercontent.com/66085260/102318558-db43fe80-3fbc-11eb-9aeb-c34883186927.png)
 
 
